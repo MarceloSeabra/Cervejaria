@@ -17,8 +17,8 @@ public class Cerveja {
 	private String sku;
 	@NotBlank(message = "O nome é obrigatório")
 	private String nome;
-	@NotBlank(message = "Descrição é obrigatória")
-	@Size(max = 50, min = 10)
+	
+	@Size(max = 50, min = 10,message = "Descrição é obrigatória")
 	private String descricao;
 	
 	public Cerveja() {

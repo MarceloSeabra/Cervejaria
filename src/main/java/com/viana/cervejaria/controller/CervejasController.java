@@ -22,7 +22,8 @@ import com.viana.cervejaria.model.Cerveja;
 public class CervejasController {
 	
 	@RequestMapping("/cervejas/novo")
-	public String novo() {
+	public String novo(Cerveja cerveja) {
+		//model.addAttribute(new Cerveja());
 		return "cerveja/CadastroCerveja";
 	}
 	
@@ -31,8 +32,9 @@ public class CervejasController {
 		if(bindingResult.hasErrors()) {
 			//System.out.println("Tem erro sim " + bindingResult.getFieldError().getDefaultMessage());
 			
-			model.addAttribute("mensagem",bindingResult.getFieldError().getDefaultMessage());
-			return "cerveja/CadastroCerveja";
+			//model.addAttribute("mensagem",bindingResult.getFieldError().getDefaultMessage());
+			//model.addAttribute(cerveja);
+			return novo(cerveja);
 		}
 		
 		redirectAttributes.addFlashAttribute("mensagem","Cerveja Cadastrada com Sucesso");
@@ -40,6 +42,12 @@ public class CervejasController {
 		System.out.println("NOME " + cerveja.getNome());
 		System.out.println("DESCRIÇÃO " + cerveja.getDescricao());
 		return "redirect:/cervejas/novo";
+	}
+	
+	@RequestMapping("/cervejas/cadastro")
+	public String cadastro() {
+		return "cerveja/cadastro-produto";
+		
 	}
 
 }
