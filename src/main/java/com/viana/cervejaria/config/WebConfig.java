@@ -22,6 +22,8 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import com.viana.cervejaria.controller.CervejasController;
 
+import nz.net.ultraq.thymeleaf.LayoutDialect;
+
 /**
  * @author marcelo
  *
@@ -58,6 +60,8 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
 		templateEngine.setEnableSpringELCompiler(true);
 		templateEngine.setTemplateResolver(templateResolver());
+		
+		templateEngine.addDialect(new LayoutDialect());
 		
 		return templateEngine;
 	}
