@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt"  
+      xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="'layout/LayoutPadrao'">
+<head>
+<title>Cadastro de Usuário</title>
+</head>
+<body>
+
+<section layout:fragment="conteudo">
+
+<div class="page-header">
+	<div class="container-fluid">
+		<h1>Cadastro de Usuário</h1>
+	</div>
+</div>
+<div class="container-fluid">
+	<form action="post" class="form-vertical  js-form-loading">
+		<div class="form-group">
+			<label for="nome">Nome</label>
+			<input id="nome" type="text" class="form-control">
+		</div>
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label for="email">E-mail</label>
+				<input id="email" type="email" class="form-control">
+			</div>
+			
+			<div class="col-sm-4 form-group">
+				<label for="data_nascimento">Data Nascimento</label>
+				<input id="data_nascimento" type="date" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 form-group">
+				<label for="senha">Senha</label>
+				<input id="senha" type="password" class="form-control">
+			</div>
+			<div class="col-sm-3 form-group">
+				<label for="senha">Confirmação de Senha</label>
+				<input id="senha" type="password" class="form-control">
+			</div>
+			<div class="col-sm-3 form-group">
+				<label for="ativo">Status</label>
+				<div>
+					<div class="checkbox custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="ativo">
+						<label class="custom-control-label" for="ativo">Ativo</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+				<div class="col-sm-3 form-group">
+					<label>Grupos</label>
+					<div>
+						<div class="checkbox checkbox-inline">
+						  <input type="checkbox"  id="defaultInline1">
+						  <label  for="defaultInline1">Adminsitrador</label>
+						</div>
+						
+						<div class="checkbox checkbox-inline">
+						  <input type="checkbox"  id="defaultInline2">
+						  <label for="defaultInline2">Vendedor</label>
+						</div>					
+					</div>
+				</div>
+		</div>
+		<div class="form-group">
+			<button class="btn  btn-primary" type="submit">Salvar</button>
+		</div>
+		
+	</form>
+</div>
+</section>
+</body>
+</html>
